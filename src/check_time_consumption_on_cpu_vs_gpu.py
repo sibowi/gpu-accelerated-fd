@@ -1,4 +1,5 @@
 import torch
+import numpy as np
 import time
 from tqdm.auto import tqdm
 import finite_differences_2d as fd
@@ -60,9 +61,9 @@ for device in devices:
         time_consumptions.append(time_consumption)
 
     # save time_consumptions
-    with open(f'{path_results}time_consumptions_{device}.txt', 'w') as file:
-        file.write(str(time_consumptions))
+    with open(f'{path_results}time_consumptions_{device}.npy', 'wb') as f:
+        np.save(f, time_consumptions)
 
 # save resolutions
-with open(f'{path_results}resolutions.txt', 'w') as file:
-    file.write(str(resolutions))
+with open(f'{path_results}resolutions.npy', 'wb') as f:
+    np.save(f, resolutions)
