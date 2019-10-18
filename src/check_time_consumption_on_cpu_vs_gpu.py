@@ -16,7 +16,7 @@ resolutions = [10, 1000, 5000, 10000, 15000, 20000]
 
 def experiment(device, resolution, n_repetitions=100):
     """
-    Computes the first-order finite derivate for a torch.Tensor n_repetitions 
+    Computes the second-order finite derivate for a torch.Tensor n_repetitions 
     times while measuring the time consumption.
 
     Parameters
@@ -43,8 +43,8 @@ def experiment(device, resolution, n_repetitions=100):
     time_0 = time.time()
     
     for i in tqdm(range(n_repetitions)):
-    
-        fd.dxdx_centered(a)
+
+        fd.dx_centered(a) * fd.dxdx_centered(a)
 
     time_consumption = time.time() - time_0
 
