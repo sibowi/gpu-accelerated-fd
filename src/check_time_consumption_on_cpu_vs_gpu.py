@@ -8,7 +8,7 @@ import finite_differences_2d as fd
 path_results = '../results/'
 
 # check that a gpu is available
-assert torch.cuda.is_available(), 'No gpu is available. Hence the experiment cannot be performed'
+assert torch.cuda.is_available(), 'No gpu is available. Hence the experiment cannot be performed.'
 
 # parameters to time
 devices = ['cpu', 'cuda:0',]
